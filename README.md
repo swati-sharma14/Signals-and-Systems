@@ -1,6 +1,6 @@
 # Signal Convolution and Output
 
-Welcome to the "Signal Convolution" repository! 🎵🔍
+Welcome to the "Signal Convolution" repository! 🔍
 
 This repository contains code to perform signal convolution and compute the resulting output signal for different input signals and system impulse responses.
 
@@ -28,4 +28,4 @@ The following signals are plotted for t in the range [0, 20]:
 
 Feel free to explore the code and modify the input signals or the system impulse response. You can plot different signals by adjusting the range of time values.
 
-Enjoy exploring signal convolution and the resulting output! 🎶🔬
+Enjoy exploring signal convolution and the resulting output! 🔬

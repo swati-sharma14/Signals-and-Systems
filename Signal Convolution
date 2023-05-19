@@ -1,0 +1,47 @@
+import matplotlib.pyplot as plot
+import numpy as np
+import math
+
+def u(n):
+    if n >= 0:
+        return 1
+    else:
+        return 0
+
+def value(n):
+    x = math.cos(n) * u(n)
+    return x
+
+def newvalue(n):
+    x = 0.25 * ((math.e)**(-2*n) - (math.e)**(-n)) * u(n)
+    return x
+
+fig, ax = plot.subplots(3, 1)
+fig.tight_layout(pad=3.0)
+
+xaxis = np.arange(0, 20.1, 0.1)
+x = []
+h = []
+y = []
+
+for n in xaxis:
+    x.append(value(n))
+    h.append(newvalue(n))
+    sum = 0
+    for m in np.arange(0, 20.1, 0.1):
+        sum += value(m) * newvalue(n - m) * 0.1
+    y.append(sum)
+
+ax[0].set_ylabel('x(t)')
+ax[0].set_xlabel('t')
+ax[0].plot(xaxis, x, color='red')
+
+ax[1].set_ylabel('h(t)')
+ax[1].set_xlabel('t')
+ax[1].plot(xaxis, h, color='green')
+
+ax[2].set_ylabel('y(t)')
+ax[2].set_xlabel('t')
+ax[2].plot(xaxis, y, color='navy')
+
+plot.show()

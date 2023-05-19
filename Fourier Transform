@@ -1,0 +1,80 @@
+import matplotlib.pyplot as plot
+import numpy as np
+import math
+import cmath
+
+arr = np.arange(-2 * (math.pi), 2 * (math.pi), (4 * math.pi / 400.0))
+
+def u(n):
+    if n == 0:
+        return 1
+    else:
+        return 0
+
+xaxis = range(-10, 10, 1)
+yaxis = []
+
+for n in xaxis:
+    yaxis.append(u(n))
+
+plot.ylabel('x[n]')
+plot.xlabel('n')
+plot.stem(xaxis, yaxis)
+plot.show()
+
+def ft(w):
+    val = 0
+    for l in range(-10, 10, 1):
+        val += u(l) * cmath.exp(-1j * w * l)
+
+    return val.real
+
+xaxis = arr
+yaxis = []
+
+for n in xaxis:
+    yaxis.append(ft(n))
+
+plot.ylabel('Real(X1(e^(jw)))')
+plot.xlabel('n')
+plot.plot(xaxis, yaxis)
+plot.show()
+
+def ft(w):
+    val = 0
+    for l in range(-10, 10, 1):
+        val += u(l) * cmath.exp(-1j * w * l)
+
+    return val.imag
+
+xaxis = arr
+yaxis = []
+
+for n in xaxis:
+    yaxis.append(ft(n))
+
+plot.ylabel('Img(X1(e^(jw)))')
+plot.xlabel('n')
+plot.plot(xaxis, yaxis)
+plot.show()
+
+def ft(w):
+    val = 0
+    for l in range(-10, 10, 1):
+        val += u(l) * cmath.exp(-1j * w * l)
+
+    return mag(val)
+
+def mag(n):
+    return math.sqrt(n.real**2 + n.imag**2)
+
+xaxis = arr
+yaxis = []
+
+for n in xaxis:
+    yaxis.append(ft(n))
+
+plot.ylabel('|X1(e^(jw))|')
+plot.xlabel('n')
+plot.plot(xaxis, yaxis)
+plot.show()

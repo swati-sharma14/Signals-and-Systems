@@ -1,23 +1,31 @@
 # Signal Convolution and Output
 
-Welcome to the "Signal Convolution" repository! 🔍
+Welcome to the "Signal Convolution" repository! 🎵🔍
 
-This repository contains code to perform signal convolution and compute the resulting output signal.
+This repository contains code to perform signal convolution and compute the resulting output signal for different input signals and system impulse responses.
 
-## Signal Functions
-The code includes two signal functions:
-- `value(n)`: Calculates the value of the first signal, x(t), at a given time t based on a mathematical expression.
-- `newvalue(n)`: Computes the value of the second signal, h(t), at a given time t using a different mathematical expression.
+## System Impulse Response
+The system S is characterized by its impulse response, h(t), which is defined as:
+h(t) = 1/4 * e^(-2t) - e^(-t) * u(t)
 
-## Convolution Operation
-The code performs convolution between the two signals, x(t) and h(t), to obtain the resulting output signal, y(t). The convolution operation is computed by summing the product of each sample of x(t) and the corresponding time-reversed and shifted sample of h(t).
+## Part a) Input: x(t) = cos(t) * u(t)
+In this part, the response of the system is determined when the input signal x(t) is given by:
+x(t) = cos(t) * u(t)
 
-## Visualization
-The code generates three subplots to visualize the signals and the output:
-1. The first subplot displays the original signal x(t) over a range of time values.
-2. The second subplot shows the second signal h(t) over the same range of time values.
-3. The third subplot presents the output signal y(t) obtained from the convolution operation.
+The following signals are plotted for t in the range [0, 20]:
+- x(t): The input signal, cosine of t multiplied by the unit step function.
+- h(t): The impulse response of the system.
+- y(t): The output signal obtained by convolving x(t) and h(t).
 
-Feel free to modify the mathematical expressions, adjust the range of time values, or explore different signals by modifying the code.
+## Part b) Input: x(t) = e^(-t) * sin(t) * u(t)
+In this part, the response of the system is computed when the input signal x(t) is defined as:
+x(t) = e^(-t) * sin(t) * u(t)
 
-Enjoy exploring signal convolution and the resulting output! 🔬
+The following signals are plotted for t in the range [0, 20]:
+- x(t): The input signal, exponential decay multiplied by sine of t and the unit step function.
+- h(t): The impulse response of the system.
+- y(t): The output signal obtained by convolving x(t) and h(t).
+
+Feel free to explore the code and modify the input signals or the system impulse response. You can plot different signals by adjusting the range of time values.
+
+Enjoy exploring signal convolution and the resulting output! 🎶🔬
